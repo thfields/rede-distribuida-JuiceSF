@@ -1,0 +1,39 @@
+services:
+  juicefs-node1:
+    build: .
+    container_name: juicefs-node1
+    volumes:
+      - juicefs-data1:/mnt/juicefs
+    networks:
+      - rede-distribuida
+    command: >
+      bash -c "juicefs format --storage local --bucket /mnt/juicefs my-juicefs && juicefs mount my-juicefs /mnt/juicefs"
+
+  juicefs-node2:
+    build: .
+    container_name: juicefs-node2
+    volumes:
+      - juicefs-data2:/mnt/juicefs
+    networks:
+      - rede-distribuida
+    command: >
+      bash -c "juicefs mount my-juicefs /mnt/juicefs"
+
+  juicefs-node3:
+    build: .
+    container_name: juicefs-node3
+    volumes:
+      - juicefs-data3:/mnt/juicefs
+    networks:
+      - rede-distribuida
+    command: >
+      bash -c "juicefs mount my-juicefs /mnt/juicefs"
+
+volumes:
+  juicefs-data1:
+  juicefs-data2:
+  juicefs-data3:
+
+networks:
+  rede-distribuida:
+    driver: bridge
