@@ -31,3 +31,10 @@ O JuiceFS separa os **metadados** (informações sobre os arquivos, como permiss
 ## Conclusão
 
 O JuiceFS é uma solução prática para quem precisa de muito espaço para armazenar dados e quer uma maneira eficiente de acessar e gerenciar tudo. Se você lida com big data, machine learning, ou precisa de um sistema de arquivos distribuído, vale a pena dar uma olhada nele.
+
+
+## Docker Compose Build
+![Build](img/docker-compose-build.png)
+
+## Docker Compose Up
+![UP](img/docker-compose-up.png)
